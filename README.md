@@ -1,74 +1,86 @@
-# RAT
-Python-based Telegram-controlled RAT for Windows, with variants for persistence, screenshot, webcam, and remote shell. For educational use only.
+````
+# Remote telegram control 
+
+This is an **educational Python-based tool** that demonstrates how to send remote automation commands to a Windows system using Telegram.
+
+> ❗ This project is intended solely for cybersecurity education, blue team training, and controlled lab simulations.
 
 ---
 
-## ⚙️ Requirements
+## 🔧 Requirements
 
-- Python 3 (Windows only)
-- Telegram Bot Token
+- Python 3 (Windows)
+- Telegram Bot Token (from @BotFather)
 - Telegram Chat ID
-- `PyInstaller` (for building `.exe` files)
+- PyInstaller (optional, for .exe build)
 - Windows OS
 
 ---
 
-## 🛠️ Setup
+## 🛠️ Setup Instructions
 
-1. **Create a Telegram Bot** via [@BotFather](https://t.me/BotFather) and copy the `TOKEN`.
-2. Get your **Chat ID** using [this tool](https://api.telegram.org/bot<YourBotToken>/getUpdates) .
-3. Open the Python file and update:
-   ```python
-   TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
-   CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"
-   ```
+1. Create a Telegram Bot using [@BotFather](https://t.me/BotFather).
+2. Get your Telegram Chat ID (you can use tools like `userinfobot`).
+3. Open any version of `automation.py` and update the following lines:
 
-4. Optional: Compile the script into an executable for Windows:
-   ```bash
-   pyinstaller --noconsole --onefile your_script.py
-   ```
+```python
+TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"
+````
 
----
+4. (Optional) Compile the script to `.exe` using:
 
-## 📁 Folder Structure
-
-- **Folder 1 - Full Version with Persistence:**
-  - Adds persistence (starts with Windows).
-  - Works even after system restart .
-
-- **Folder 2 - No Persistence, Extended Features:**
-  - Lighter version without auto-start.
-  - Commands:
-    - `/cmd`
-    - `/screenshot`
-    - `/webcam`
-    - `/shutdown`
-  - Smaller codes with selected features.  
-    You can download and explore it to see the available functionalities.
-
-
-- **Folder 3 - Minimal Version (CMD only):**
-  - Very lightweight version.
-  - Only supports:
-    - `/cmd`
-  - Ideal for testing or quick shell access scenarios.
+```bash
+pyinstaller --noconsole --onefile automation.py
+```
 
 ---
 
-## 🧪 Usage
+## 📁 Versions Explained
 
-> **Note:** This RAT works only on **Windows** and should be used in lab or test environments.
+### 🔹 Version\_AutoStart
 
-1. Modify the Python code with your Telegram credentials.
-2. Run the script or build it into an EXE.
-3. Control it via Telegram using commands like `/cmd`, `/screenshot`, etc.
+* Runs automatically .
+* Useful for persistence analysis in lab setups.
+
+### 🔹 Version\_ManualRun
+
+* Standard execution via terminal.
+* Supports screenshot and webcam snapshot.
+
+### 🔹 Version\_CLIOnly
+
+* Lightweight version for command-line only tasks.
+
+---
+
+## ✅ Supported Commands
+
+These can be sent to the bot via Telegram:
+
+* `/cmd` – Run a system command
+* `/screenshot` – Take a screenshot
+* `/webcam` – Capture a webcam image
+* `/shutdown` – Log off or shut down the system
+
+> All code is written for testing and training within isolated environments.
+
+---
 
 ## ⚠️ Disclaimer
 
-This project is created **for educational and ethical research purposes only.**  
-It is meant to demonstrate how attackers may implement Telegram-based RATs, and help defenders recognize and understand such behaviors.
+This software is created strictly for:
 
-**The author is not responsible for any misuse of this code.**  
-Do **not** use this on systems you do not own or have permission to test.
+* Blue team awareness and defensive testing
+* Cybersecurity educational purposes
+* Malware analysis and behavioral research
 
-Using this software for malicious purposes is illegal and unethical.
+**Do not use on real systems or without permission.**
+
+The author does **not support or condone** misuse of this tool in any form.
+
+Using this project for malicious purposes is illegal and violates GitHub's Acceptable Use Policy.
+
+```
+
+---
