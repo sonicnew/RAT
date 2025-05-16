@@ -20,7 +20,7 @@ This is an **educational Python-based tool** that demonstrates how to send remot
 ## 🛠️ Setup Instructions
 
 1. Create a Telegram Bot using [@BotFather](https://t.me/BotFather).
-2. Get your **Chat ID** using (https://api.telegram.org/bot<YourBotToken>/getUpdates) or a helper bot.
+2. Get your **Chat ID** using https://api.telegram.org/bot <YourBotToken> /getUpdates or a helper bot.
 3. Open any version of `edu_remote.py` and update the following lines:
 
 ```python
